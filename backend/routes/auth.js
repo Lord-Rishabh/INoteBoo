@@ -48,6 +48,9 @@ router.post('/createuser', [
             }
         }
         
+        /* Here data is payload of JWT. It's the data that we want to include in Token.
+        JWT_SECRET is secret key used to sign the token. The signing process creates a 
+        digital signature for the token. */
         const authToken = jwt.sign(data,JWT_SECRET);
         success = true; 
         res.json({success,authToken});
@@ -109,6 +112,8 @@ router.post('/getuser' , fetchuser, async (req,res) => {
 
     try {
         const userId = req.user.id;
+
+        // This will retrieves all fields except for the "password" field.
         const user = await User.findById(userId).select("-password");
         console.log(req.user.id);
         res.json(user);

@@ -10,7 +10,7 @@ const Navbar = (props) => {
   // We can access current page path name by 'location.pathname' .
   let location = useLocation();
   React.useEffect(() => {
-    // Google Analytics
+    // Search Analytics
     //  console.log(location.pathname);
   }, [location]);
 
@@ -24,7 +24,7 @@ const Navbar = (props) => {
     <div>
       <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">Navbar</Link>
+          <Link className="navbar-brand" to="/"><i class="fa-solid fa-book"></i>&nbsp;INoteBook</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>

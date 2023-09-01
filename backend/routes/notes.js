@@ -92,7 +92,6 @@ router.delete('/deletenote/:id', fetchuser, async (req, res) => {
             return res.status(400).json({ errors: error.array() });
         }
 
-        // Find the note to be updated and update it 
         let note = await Note.findById(req.params.id);
         if(!note && note.user.toString() !== req.user.id) {
             return res.status(400).send("Please use correct Id");
